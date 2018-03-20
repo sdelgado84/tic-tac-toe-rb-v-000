@@ -65,3 +65,45 @@ def turn_count
     end
     count
   end
+  def current_player
+      turn_count.even? ? "X" : "O"
+    end
+
+    def won?
+      WIN_COMBINATIONS.find do |win_combo|
+        @board[win_combo[0]] == @board[win_combo[1]] && @board[win_combo[0]] == @board[win_combo[2]] && position_taken?(win_combo[1])
+      end
+    end
+
+    def full?
+      @board.none? do |i|
+        i == " " || i.nil?
+      end
+    end
+
+    def draw?
+      won? == nil && full? == true
+    end
+
+    def over?
+      draw? == true || won? != nil
+    end
+
+    def winner
+      if won? != nil
+        winner = @board[won?[0]]
+      end
+    end
+
+    def play
+      until over? == true
+        turn
+      end
+      if draw? == true
+           puts "Cat's Game!"
+      else won?
+         puts "Congratulations #{winner}!"
+       end
+    end
+
+  end
