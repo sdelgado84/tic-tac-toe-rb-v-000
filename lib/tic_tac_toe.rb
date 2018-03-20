@@ -8,6 +8,5 @@ WIN_COMBINATIONS = [
   [0,4,8],
   [2,4,6]]
 #Output board
-def display_board(
-board = [" ", " ", " ", " ", " ", " ", " ", " ", " "])
+def display_board(board = [" ", " ", " ", " ", " ", " ", " ", " ", " "])
   puts 'display board'
