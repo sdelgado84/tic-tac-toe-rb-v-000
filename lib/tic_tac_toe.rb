@@ -22,3 +22,9 @@ def input_to_index(move)
    index = move.to_i - 1
    index
 end
+# move
+def move(index, char="X")
+    @board[index] = char
+    turn_count
+    display_board
+  end
