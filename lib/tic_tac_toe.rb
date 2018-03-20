@@ -17,7 +17,7 @@ puts " #{board[3]} | #{board[4]} | #{board[5]} "
 puts "-----------"
 puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
-# Input to Index 
+# Input to Index
 def input_to_index(move)
    index = move.to_i - 1
    index
